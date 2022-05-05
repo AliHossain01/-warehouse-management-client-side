@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "C Programming Language",
+    "description": "C Programming Language is the primary book for programmer",
+    "price": 250,
+    "quantity": 5,
+    "supplier": "Sobuj Book House",
+    "img": "https://raw.githubusercontent.com/AliHossain01/books/main/book1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "The C++ Programming Language",
+    "description": "C++ Programming Language is the primary book for programmer",
+    "price": 350,
+    "quantity": 6,
+    "supplier": "Alormichil Book House",
+    "img": "https://raw.githubusercontent.com/AliHossain01/books/main/book2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Pro Java Programming",
+    "description": "Java Programming Language is the primary book for programmer",
+    "price": 300,
+    "quantity": 7,
+    "supplier": "Alormichil Book House",
+    "img": "https://raw.githubusercontent.com/AliHossain01/books/main/book3.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Learn Java Quickly",
+    "description": "Java Programming Language is the primary book for programmer",
+    "price": 320,
+    "quantity": 4,
+    "supplier": "Sobuz Book House",
+    "img": "https://raw.githubusercontent.com/AliHossain01/books/main/book4.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Head First Javascript",
+    "description": "Javascript Programming Language is the primary book for programmer",
+    "price": 420,
+    "quantity": 8,
+    "supplier": "Jamal Book House",
+    "img": "https://raw.githubusercontent.com/AliHossain01/books/main/book5.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Javascript B to P",
+    "description": "Javascript Programming Language is the primary book for programmer",
+    "price": 520,
+    "quantity": 5,
+    "supplier": "Sobuz Book House",
+    "img": "https://raw.githubusercontent.com/AliHossain01/books/main/book6.jpg"
+  }
+]
