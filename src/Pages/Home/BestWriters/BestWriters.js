@@ -7,7 +7,7 @@ import wedding3 from '../../../images/portfoli/wedding3.jpg';
 import wedding4 from '../../../images/portfoli/wedding4.jpg';
 import wedding5 from '../../../images/portfoli/wedding5.jpg';
 import wedding6 from '../../../images/portfoli/wedding6.jpg';
-import BestSelling from './../BestSelling/BestSelling';
+import BestWriter from './../BestWriter/BestWriter';
 
 const weddings = [
     { id: 1, img: wedding1 },
@@ -18,20 +18,20 @@ const weddings = [
     { id: 6, img: wedding6 },
 ]
 
-const BestSellings = () => {
+const BestWriters = () => {
     return (
-        <div id='bestselling' className='container'>
-            <h2 className='text-dark text-center mt-5'> <strong>Best Selling</strong> </h2>
+        <div id='bestwriter' className='container'>
+            <h2 className='text-dark text-center mt-5'> <strong>Best Writer</strong> </h2>
             <div className="row">
                 {
-                    weddings.map(wedding => <BestSelling
+                    weddings.map(wedding => <BestWriter
                         key={wedding.id}
                         expert={wedding}
-                    ></BestSelling>)
+                    ></BestWriter>)
                 }
             </div>
         </div>
     );
 };
 
-export default BestSellings;
+export default BestWriters;
