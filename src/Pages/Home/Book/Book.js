@@ -18,7 +18,7 @@ const Book = ({ book }) => {
                 <div className="card-body">
                     <h5 className="card-title">{name}</h5>
                     <p>Price: {price} BDT</p>
-                    <p>Quantity: {quantity} BDT</p>
+                    <p>Quantity: {quantity} </p>
                     <p><small>Supplier: {supplier}</small></p>
                     <p className="card-text"><small>{description}</small></p>
 
