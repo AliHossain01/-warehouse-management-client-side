@@ -61,8 +61,7 @@ const Register = () => {
                 <input type="email" name="email" id="2" placeholder='Email Address' required />
                 <input type="password" name="password" id="3" placeholder='Password' required />
 
-                {/* <input onClick={() => setAgree(!agree)} type="checkbox" name="terms" id="term" />
-                <label className={agree ? 'ps-2 text-primary' : 'ps-2 text-danger'} htmlFor="terms">Accept Car services Term and Conditions</label> */}
+
 
                 <input className='w-25 mx-auto btn btn-dark mt-2' type="submit" value="Sign Up" />
 
