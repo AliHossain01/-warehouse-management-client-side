@@ -11,6 +11,7 @@ import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 
 import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
+import AddBook from './Pages/AddBook/AddBook';
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
         <Route path="/register" element={<Register />} />
 
         {/* <Route path="/checkout" element={<RequireAuth><CheckOut /></RequireAuth>} /> */}
+        <Route path="/addbook" element={<RequireAuth><AddBook /></RequireAuth>} />
+
 
         <Route path="/blog" element={<Blog />} />
         <Route path="*" element={<NotFound></NotFound>}></Route>
