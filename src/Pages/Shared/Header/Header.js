@@ -34,9 +34,19 @@ const Header = () => {
                         <Nav>
                             <Nav.Link as={Link} to="blog" className='effects'>Blog</Nav.Link>
                             <Nav.Link as={Link} to="about" className='effects'>About</Nav.Link>
+
+                            {
+                                user && <>
+                                    <Nav.Link as={Link} to="addbook">Add</Nav.Link>
+                                    <Nav.Link as={Link} to="manage">Manage</Nav.Link>
+                                </>
+                            }
+
                             {user ? <button className='btn btn-link text-white effects text-decoration-none' onClick={handleSignOut}>Sign out <FiLogOut /> </button>
                                 :
                                 <Nav.Link as={Link} to="login" className='effects'>Sign In <FiLogIn /></Nav.Link>}
+
+
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
