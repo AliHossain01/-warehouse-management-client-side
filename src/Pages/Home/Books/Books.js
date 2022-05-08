@@ -6,7 +6,7 @@ const Books = () => {
     const [books, setBooks] = useState([]);
 
     useEffect(() => {
-        fetch('services.json')
+        fetch('http://localhost:5000/inventory')
             .then(res => res.json())
             .then(data => setBooks(data));
     }, [])
@@ -16,10 +16,11 @@ const Books = () => {
             <h2 className='text-center text-dark'><strong>Books</strong></h2>
             <div className="row">
                 {
-                    books.map(book => <Book
-                        key={book.id}
+                    books.slice(0, 6).map(book => <Book
+                        key={book._id}
                         book={book}
                     ></Book>)
+
                 }
             </div>
         </div>

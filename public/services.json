@@ -52,5 +52,32 @@
     "quantity": 5,
     "supplier": "Sobuz Book House",
     "img": "https://raw.githubusercontent.com/AliHossain01/books/main/book6.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Javascript B to P7",
+    "description": "Javascript Programming Language is the primary book for programmer",
+    "price": 520,
+    "quantity": 5,
+    "supplier": "Sobuz Book House",
+    "img": "https://raw.githubusercontent.com/AliHossain01/books/main/book6.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Javascript B to P8",
+    "description": "Javascript Programming Language is the primary book for programmer",
+    "price": 520,
+    "quantity": 5,
+    "supplier": "Sobuz Book House",
+    "img": "https://raw.githubusercontent.com/AliHossain01/books/main/book6.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Javascript B to P9",
+    "description": "Javascript Programming Language is the primary book for programmer",
+    "price": 520,
+    "quantity": 5,
+    "supplier": "Sobuz Book House",
+    "img": "https://raw.githubusercontent.com/AliHossain01/books/main/book6.jpg"
   }
 ]

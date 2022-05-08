@@ -95,7 +95,7 @@ const Login = () => {
 
             {errorElement}
 
-            <p>New to Genius Car? <Link to="/register" className='text-primary pe-auto text-decoration-none' onClick={navigateRegister}>Please Sign Up</Link> </p>
+            <p>New to Book's World? <Link to="/register" className='text-primary pe-auto text-decoration-none' onClick={navigateRegister}>Please Sign Up</Link> </p>
             <p>Forget Password? <button className='btn btn-link text-danger pe-auto text-decoration-none' onClick={resetPassword}>Reset Password</button> </p>
 
             <SocialLogin></SocialLogin>
