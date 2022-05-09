@@ -1,5 +1,6 @@
 import React from 'react';
 import useBooks from '../../hooks/useBooks';
+import { Link } from 'react-router-dom';
 
 const ManageBook = () => {
     const [books, setBooks] = useBooks();
@@ -28,6 +29,12 @@ const ManageBook = () => {
 
                 </div>)
             }
+
+            <div className='text-center'>
+                <Link to="/addbook">
+                    <button className='btn btn-outline-dark'>Add Book</button>
+                </Link>
+            </div>
         </div>
     );
 };
