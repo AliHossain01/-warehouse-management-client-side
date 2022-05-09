@@ -12,7 +12,7 @@ import Register from './Pages/Login/Register/Register';
 import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 import AddBook from './Pages/AddBook/AddBook';
 import ManageBook from './Pages/ManageBook/ManageBook';
-import Order from './Pages/Order/Order';
+import MyItem from './Pages/MyItem/MyItem';
 
 function App() {
   return (
@@ -29,7 +29,7 @@ function App() {
         {/* <Route path="/checkout" element={<RequireAuth><CheckOut /></RequireAuth>} /> */}
         <Route path="/addbook" element={<RequireAuth><AddBook /></RequireAuth>} />
         <Route path="/manage" element={<RequireAuth><ManageBook /></RequireAuth>} />
-        <Route path="/orders" element={<RequireAuth><Order /></RequireAuth>} />
+        <Route path="/myitems" element={<RequireAuth><MyItem /></RequireAuth>} />
 
 
         <Route path="/blog" element={<Blog />} />

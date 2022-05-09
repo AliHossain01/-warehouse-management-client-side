@@ -4,19 +4,27 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './../../firebase.init';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AiFillDelete } from "react-icons/ai";
+import useBooks from './../../hooks/useBooks';
 
-const Order = () => {
+const MyItem = () => {
     const [user] = useAuthState(auth);
     const [myitems, setMyItems] = useState([]);
+    const [books, setBooks] = useBooks();
+
+    const navigate = useNavigate();
+
+    const navigateToBookDetail = id => {
+        navigate(`/inventory/${id}`);
+    }
 
 
 
     useEffect(() => {
 
 
-        const getOrders = async () => {
+        const getMyAllItems = async () => {
 
             const email = user.email;
             const url = `http://localhost:5000/myitems?email=${email}`;
@@ -25,10 +33,26 @@ const Order = () => {
 
         }
 
-        getOrders();
+        getMyAllItems();
 
 
     }, [user])
+
+    const handleDelete = id => {
+        const proceed = window.confirm('Are you sure?');
+        if (proceed) {
+            const url = `http://localhost:5000/inventory/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    const remaining = myitems.filter(myitem => myitem._id !== id);
+                    setMyItems(remaining);
+                })
+        }
+    }
 
     return (
         <div className='w-50 mx-auto'>
@@ -39,7 +63,7 @@ const Order = () => {
                     <th>Quantity</th>
                     <th>Email</th>
                     <th>Action</th>
-                    <th>ADD</th>
+                    <th>Update</th>
 
 
                 </tr>
@@ -50,8 +74,8 @@ const Order = () => {
                             <td>{myitem.price}</td>
                             <td>{myitem.quantity}</td>
                             <td>{myitem.email}</td>
-                            <td>{<button><AiFillDelete className='icon' /></button>}</td>
-                            <td>{<Link to="/addbook"><button className='btn btn-outline-dark mb-2'>Add</button> </Link>}</td>
+                            <td>{<button onClick={() => handleDelete(myitem._id)}><AiFillDelete className='icon' /></button>}</td>
+                            <td>{<button onClick={() => navigateToBookDetail(myitem._id)} className="btn btn-outline-dark ">Update</button>}</td>
 
                         </tr>
                     )
@@ -62,5 +86,5 @@ const Order = () => {
     );
 };
 
-export default Order;
+export default MyItem;
 

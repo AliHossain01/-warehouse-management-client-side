@@ -44,10 +44,12 @@ const BookDetail = () => {
     const getInputvalue = (event) => {
         const userValue = event.target.value;
         setUserQuantity(userValue)
+        // toast('Your order is booked!!!');
+
 
     }
 
-    const handleQuantity = () => {
+    const handleQuantity = (event) => {
         if (userQuantity && userQuantity > 0) {
             const newQuantity = parseInt(quantity) + parseInt(userQuantity);
             const setQuantity = { newQuantity }
@@ -62,10 +64,12 @@ const BookDetail = () => {
                 .then(res => res.json())
                 .then(data => console.log(data))
 
+
         }
         else {
             alert('Please given a valid input')
         }
+        event.target.reset();
     }
 
 

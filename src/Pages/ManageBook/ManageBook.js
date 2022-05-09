@@ -1,11 +1,18 @@
 import React from 'react';
 import useBooks from '../../hooks/useBooks';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AiFillDelete } from "react-icons/ai";
 import './ManageBook.css'
 
 const ManageBook = () => {
     const [books, setBooks] = useBooks();
+
+
+    const navigate = useNavigate();
+
+    const navigateToBookDetail = id => {
+        navigate(`/inventory/${id}`);
+    }
 
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
@@ -31,7 +38,7 @@ const ManageBook = () => {
                     <th>Quantity</th>
                     <th>Email</th>
                     <th>Action</th>
-                    <th>Add Books</th>
+                    <th>Update Books</th>
 
 
                 </tr>
@@ -43,7 +50,7 @@ const ManageBook = () => {
                             <td>{book.quantity}</td>
                             <td>{book.email}</td>
                             <td>{<button onClick={() => handleDelete(book._id)}><AiFillDelete className='icon' /></button>}</td>
-                            <td>{<Link to="/addbook"><button className='btn btn-outline-dark mb-2'>Add Book</button> </Link>}</td>
+                            <td>{<button onClick={() => navigateToBookDetail(book._id)} className="btn btn-outline-dark ">Update</button>}</td>
 
                         </tr>
                     )

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Book from '../Book/Book';
+import { Link } from 'react-router-dom';
 
 
 const Books = () => {
@@ -22,6 +23,10 @@ const Books = () => {
                     ></Book>)
 
                 }
+            </div>
+
+            <div className='mx-auto d-block w-50 mt-5'>
+                <Link to="/manage"><button className='btn btn-outline-dark mb-2 btn-lg'>Manage Books</button> </Link>
             </div>
 
         </div>
