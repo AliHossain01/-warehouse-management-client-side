@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCBYqgtxkVWQpShLIWQ9_zIbaoUmtYGvv8",
-    authDomain: "photography-services-e857d.firebaseapp.com",
-    projectId: "photography-services-e857d",
-    storageBucket: "photography-services-e857d.appspot.com",
-    messagingSenderId: "425371888802",
-    appId: "1:425371888802:web:6fbb22825d37db8d02fbfb"
+    apiKey: "AIzaSyBXQU8K_ck27TC2Ks7BR9I0P43gXsA6RFY",
+    authDomain: "warehouse-management-8e867.firebaseapp.com",
+    projectId: "warehouse-management-8e867",
+    storageBucket: "warehouse-management-8e867.appspot.com",
+    messagingSenderId: "596099471306",
+    appId: "1:596099471306:web:d41faae624783a1ec6a133"
 };
 
 const app = initializeApp(firebaseConfig);

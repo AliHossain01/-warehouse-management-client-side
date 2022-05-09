@@ -10,8 +10,8 @@ const BestWriters = () => {
             <section>
 
                 <a href="#">
-                    <article class="card">
-                        <figure class="card-img">
+                    <article className="card">
+                        <figure className="card-img">
                             <img src="https://raw.githubusercontent.com/AliHossain01/writer/main/writer1.jpg" />
                             <figcaption>
                                 Jhankar Mahbub
@@ -21,8 +21,8 @@ const BestWriters = () => {
                     </article>
                 </a>
                 <a href="#">
-                    <article class="card">
-                        <figure class="card-img">
+                    <article className="card">
+                        <figure className="card-img">
                             <img src="https://raw.githubusercontent.com/AliHossain01/writer/main/writer2.jpg" />
                             <figcaption>
                                 Hasin Hyder
@@ -32,16 +32,16 @@ const BestWriters = () => {
                     </article>
                 </a>
                 <a href="#">
-                    <article class="card">
-                        <figure class="card-img">
+                    <article className="card">
+                        <figure className="card-img">
                             <img src="https://raw.githubusercontent.com/AliHossain01/writer/main/writer3.jpg" />
                             <figcaption>
                                 Sumit Saha
                             </figcaption>
                         </figure>
-                        {/* <div class="card-body">
-                            <h2 class="card-title">cake</h2>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu gravida urna, in venenatis leo.</p>
+                        {/* <div className="card-body">
+                            <h2 className="card-title">cake</h2>
+                            <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu gravida urna, in venenatis leo.</p>
                         </div> */}
                     </article>
                 </a>

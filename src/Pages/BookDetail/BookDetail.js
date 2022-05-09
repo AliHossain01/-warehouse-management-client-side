@@ -2,59 +2,73 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams, Navigate, useNavigate } from 'react-router-dom';
 
 const BookDetail = () => {
-
-
+    const [userQuantity, setUserQuantity] = useState(null);
 
     const { inventoryId } = useParams();
-    const [book, setBooks] = useState({});
+    const [book, setBook] = useState({});
 
     useEffect(() => {
         const url = `http://localhost:5000/inventory/${inventoryId}`;
         console.log(url);
         fetch(url)
             .then(res => res.json())
-            .then(data => setBooks(data));
+            .then(data => setBook(data));
 
-    }, [])
+    }, [book]);
+
+    const quantity = parseInt(book.quantity);
+    const handleDelivered = () => {
+        console.log(quantity);
+        if (quantity > 0) {
+            const newQuantity = quantity - 1;
+            const deliveredQuantity = { newQuantity }
+
+            const url = `http://localhost:5000/inventory/${inventoryId}`;
+
+            fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(deliveredQuantity)
+            })
+                .then(res => res.json())
+                .then(data => console.log(data))
+
+        }
+        else {
+            alert('Out of Stock')
+        }
+    }
+
+    const getInputvalue = (event) => {
+        const userValue = event.target.value;
+        setUserQuantity(userValue)
+
+    }
+
+    const handleQuantity = () => {
+        if (userQuantity && userQuantity > 0) {
+            const newQuantity = parseInt(quantity) + parseInt(userQuantity);
+            const setQuantity = { newQuantity }
+            const url = `http://localhost:5000/inventory/${inventoryId}`;
+            fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(setQuantity)
+            })
+                .then(res => res.json())
+                .then(data => console.log(data))
+
+        }
+        else {
+            alert('Please given a valid input')
+        }
+    }
 
 
-
-
-
-
-
-    // const handleUpdateQuantity = (e) => {
-    //     e.preventDefault()
-    //     const name = book.name;
-    //     const description = book.description;
-    //     const price = book.price;
-    //     const supplier = book.supplier;
-
-    //     const preQuantity = parseInt(book.quantity);
-    //     const newQuantity = parseInt(e.target.name.value);
-    //     // console.log(reStock);
-    //     const quantity = (preQuantity + newQuantity);
-    //     console.log(quantity);
-    //     const updatedQuantity = { quantity, name, description, price, supplier };
-    //     console.log(updatedQuantity);
-    //     const url = `http://localhost:5000/inventory/${id}`;
-    //     fetch(url, {
-    //         method: 'PUT',
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify(updatedQuantity)
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log(data);
-    //             alert('Are You Sure??')
-    //             e.target.reset()
-    //         })
-
-    // }
-
-    //onSubmit={handleUpdateQuantity}
 
 
 
@@ -75,16 +89,21 @@ const BookDetail = () => {
                         <p>Quantity: {book.quantity} </p>
                         <p><small>Supplier: {book.supplier}</small></p>
 
-                        <button className="btn btn-outline-dark text-center ">Delivered</button>
+                        <button id='item-btn' className="btn btn-outline-dark text-center " onClick={handleDelivered}>Delivered</button>
 
                     </div>
 
-                    <div>
+                    <div className='m-3'>
+
                         <form>
-                            <input className='m-2' type="number" name="quantity" placeholder='Restock Quantity' required />
-                            <input type="submit" value="Restock" />
+
+                            <input type="text" className='mb-2' onChange={getInputvalue} placeholder='Restock Quantity' />
+                            <br />
+                            <input id='item-btn' type="button" value="Restock" onClick={handleQuantity} />
+
                         </form>
                     </div>
+
                 </div>
             </div>
         </div>

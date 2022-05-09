@@ -1,11 +1,13 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddBook = () => {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
-        console.log(data);
+        // console.log(data);
         const url = `http://localhost:5000/inventory`;
         fetch(url, {
             method: 'POST',
@@ -17,6 +19,8 @@ const AddBook = () => {
             .then(res => res.json())
             .then(result => {
                 console.log(result);
+                toast('Book Added');
+                reset()
             })
     };
 
@@ -35,6 +39,7 @@ const AddBook = () => {
                 <input className='mb-2' placeholder='Photo URL' type="text" {...register("img")} />
                 <input type="submit" value="Add Book" />
             </form>
+            <ToastContainer />
         </div>
     );
 };
