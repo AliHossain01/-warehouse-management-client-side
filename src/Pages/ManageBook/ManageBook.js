@@ -29,6 +29,7 @@ const ManageBook = () => {
                     <th>Name</th>
                     <th>Price</th>
                     <th>Quantity</th>
+                    <th>Email</th>
                     <th>Action</th>
                     <th>Add Books</th>
 
@@ -40,6 +41,7 @@ const ManageBook = () => {
                             <td>{book.name}</td>
                             <td>{book.price}</td>
                             <td>{book.quantity}</td>
+                            <td>{book.email}</td>
                             <td>{<button onClick={() => handleDelete(book._id)}><AiFillDelete className='icon' /></button>}</td>
                             <td>{<Link to="/addbook"><button className='btn btn-outline-dark mb-2'>Add Book</button> </Link>}</td>
 
