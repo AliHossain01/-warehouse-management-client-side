@@ -1,6 +1,8 @@
 import React from 'react';
 import useBooks from '../../hooks/useBooks';
 import { Link } from 'react-router-dom';
+import { AiFillDelete } from "react-icons/ai";
+import './ManageBook.css'
 
 const ManageBook = () => {
     const [books, setBooks] = useBooks();
@@ -22,21 +24,51 @@ const ManageBook = () => {
     }
     return (
         <div className='w-50 mx-auto'>
-            <h2>Manage Books</h2>
-            {
-                books.map(books => <div key={books._id}>
-                    <h5>{books.name} <button onClick={() => handleDelete(books._id)}>X</button></h5>
+            < table>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Action</th>
+                    <th>Add Books</th>
 
-                </div>)
-            }
 
-            <div className='text-center'>
-                <Link to="/addbook">
-                    <button className='btn btn-outline-dark'>Add Book</button>
-                </Link>
-            </div>
+                </tr>
+                {books.map(book => {
+                    return (
+                        <tr key={book._id}>
+                            <td>{book.name}</td>
+                            <td>{book.price}</td>
+                            <td>{book.quantity}</td>
+                            <td>{<button onClick={() => handleDelete(book._id)}><AiFillDelete className='icon' /></button>}</td>
+                            <td>{<Link to="/addbook"><button className='btn btn-outline-dark mb-2'>Add Book</button> </Link>}</td>
+
+                        </tr>
+                    )
+                })}
+            </table>
         </div>
+
     );
 };
 
 export default ManageBook;
+
+
+
+
+
+// {/* <div className='w-50 mx-auto'>
+//     <h2>Manage Books</h2>
+//     {
+//         books.map(book => <div key={book._id}>
+//             <h5>{book.name} <button onClick={() => handleDelete(book._id)}><AiFillDelete className='icon' /></button>  <Link to="/addbook">
+//                 <button className='btn btn-outline-dark'>Add Book</button>
+//             </Link></h5>
+
+
+//         </div>)
+//     }
+
+
+// </div> */}
