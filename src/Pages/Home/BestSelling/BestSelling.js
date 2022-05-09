@@ -1,8 +1,8 @@
 import React from 'react';
 import './BestSelling.css'
 
-const BestSelling = ({ expert }) => {
-    const { name, img } = expert;
+const BestSelling = ({ book }) => {
+    const { name, img } = book;
     return (
         <div className="g-5 col-sm-12 col-md-6 col-lg-4">
             <div className="gallery">
