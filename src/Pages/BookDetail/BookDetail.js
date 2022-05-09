@@ -8,7 +8,7 @@ const BookDetail = () => {
     const [book, setBook] = useState({});
 
     useEffect(() => {
-        const url = `http://localhost:5000/inventory/${inventoryId}`;
+        const url = `https://gentle-garden-90772.herokuapp.com/inventory/${inventoryId}`;
         console.log(url);
         fetch(url)
             .then(res => res.json())
@@ -23,7 +23,7 @@ const BookDetail = () => {
             const newQuantity = quantity - 1;
             const deliveredQuantity = { newQuantity }
 
-            const url = `http://localhost:5000/inventory/${inventoryId}`;
+            const url = `https://gentle-garden-90772.herokuapp.com/inventory/${inventoryId}`;
 
             fetch(url, {
                 method: 'PUT',
@@ -53,7 +53,7 @@ const BookDetail = () => {
         if (userQuantity && userQuantity > 0) {
             const newQuantity = parseInt(quantity) + parseInt(userQuantity);
             const setQuantity = { newQuantity }
-            const url = `http://localhost:5000/inventory/${inventoryId}`;
+            const url = `https://gentle-garden-90772.herokuapp.com/inventory/${inventoryId}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {

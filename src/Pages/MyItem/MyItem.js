@@ -27,7 +27,7 @@ const MyItem = () => {
         const getMyAllItems = async () => {
 
             const email = user.email;
-            const url = `http://localhost:5000/myitems?email=${email}`;
+            const url = `https://gentle-garden-90772.herokuapp.com/myitems?email=${email}`;
             const { data } = await axios.get(url);
             setMyItems(data);
 
@@ -41,7 +41,7 @@ const MyItem = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            const url = `http://localhost:5000/inventory/${id}`;
+            const url = `https://gentle-garden-90772.herokuapp.com/inventory/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
